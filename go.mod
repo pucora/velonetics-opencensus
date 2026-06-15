@@ -13,7 +13,7 @@ require (
 	github.com/aws/aws-sdk-go v1.55.5
 	github.com/gin-gonic/gin v1.9.1
 	github.com/kpacha/opencensus-influxdb v0.0.0-20180520162117-1b490a38de4c
-	github.com/velonetics/lura/v2 v2.11.0
+	github.com/velonetics/lura/v2 v2.0.0
 	github.com/openzipkin/zipkin-go v0.1.6
 	github.com/prometheus/client_golang v1.20.2
 	go.opencensus.io v0.24.0
@@ -54,7 +54,7 @@ require (
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/klauspost/compress v1.17.9 // indirect
 	github.com/klauspost/cpuid/v2 v2.2.9 // indirect
-	github.com/velonetics/flatmap v1.2.0 // indirect
+	github.com/velonetics/flatmap v1.0.0 // indirect
 	github.com/leodido/go-urn v1.4.0 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
