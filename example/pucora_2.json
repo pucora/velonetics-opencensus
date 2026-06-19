@@ -30,7 +30,7 @@
         }
     ],
     "extra_config": {
-        "github_com/velonetics/velonetics-opencensus": {
+        "github_com/pucora/velonetics-opencensus": {
             "sample_rate": 100,
             "reporting_period": 1
         }

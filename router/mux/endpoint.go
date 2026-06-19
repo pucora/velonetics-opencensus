@@ -3,10 +3,10 @@ package mux
 import (
 	"net/http"
 
-	opencensus "github.com/velonetics/velonetics-opencensus/v2"
-	"github.com/velonetics/lura/v2/config"
-	"github.com/velonetics/lura/v2/proxy"
-	"github.com/velonetics/lura/v2/router/mux"
+	opencensus "github.com/pucora/velonetics-opencensus/v2"
+	"github.com/pucora/lura/v2/config"
+	"github.com/pucora/lura/v2/proxy"
+	"github.com/pucora/lura/v2/router/mux"
 	"go.opencensus.io/plugin/ochttp"
 )
 

@@ -10,7 +10,7 @@ import (
 	"github.com/aws/aws-sdk-go/aws/credentials"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/xray"
-	opencensus "github.com/velonetics/velonetics-opencensus/v2"
+	opencensus "github.com/pucora/velonetics-opencensus/v2"
 )
 
 func init() {
@@ -24,7 +24,7 @@ func Exporter(_ context.Context, cfg opencensus.Config) (*ocAws.Exporter, error)
 		return nil, errors.New("xray exporter disabled")
 	}
 	if cfg.Exporters.Xray.Version == "" {
-		cfg.Exporters.Xray.Version = "Velonetics-opencensus"
+		cfg.Exporters.Xray.Version = "Pucora-opencensus"
 	}
 
 	if !cfg.Exporters.Xray.UseEnv {

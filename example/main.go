@@ -9,27 +9,27 @@ import (
 	"syscall"
 
 	"github.com/gin-gonic/gin"
-	"github.com/velonetics/lura/v2/config"
-	"github.com/velonetics/lura/v2/logging"
-	"github.com/velonetics/lura/v2/proxy"
-	veloneticsgin "github.com/velonetics/lura/v2/router/gin"
-	"github.com/velonetics/lura/v2/transport/http/client"
+	"github.com/pucora/lura/v2/config"
+	"github.com/pucora/lura/v2/logging"
+	"github.com/pucora/lura/v2/proxy"
+	veloneticsgin "github.com/pucora/lura/v2/router/gin"
+	"github.com/pucora/lura/v2/transport/http/client"
 
-	opencensus "github.com/velonetics/velonetics-opencensus/v2"
-	"github.com/velonetics/velonetics-opencensus/v2/exporter"
-	_ "github.com/velonetics/velonetics-opencensus/v2/exporter/influxdb"
-	_ "github.com/velonetics/velonetics-opencensus/v2/exporter/jaeger"
-	_ "github.com/velonetics/velonetics-opencensus/v2/exporter/prometheus"
-	_ "github.com/velonetics/velonetics-opencensus/v2/exporter/zipkin"
-	opencensusgin "github.com/velonetics/velonetics-opencensus/v2/router/gin"
-	"github.com/velonetics/lura/v2/transport/http/server"
+	opencensus "github.com/pucora/velonetics-opencensus/v2"
+	"github.com/pucora/velonetics-opencensus/v2/exporter"
+	_ "github.com/pucora/velonetics-opencensus/v2/exporter/influxdb"
+	_ "github.com/pucora/velonetics-opencensus/v2/exporter/jaeger"
+	_ "github.com/pucora/velonetics-opencensus/v2/exporter/prometheus"
+	_ "github.com/pucora/velonetics-opencensus/v2/exporter/zipkin"
+	opencensusgin "github.com/pucora/velonetics-opencensus/v2/router/gin"
+	"github.com/pucora/lura/v2/transport/http/server"
 )
 
 func main() {
 	port := flag.Int("p", 0, "Port of the service")
 	logLevel := flag.String("l", "ERROR", "Logging level")
 	debug := flag.Bool("d", false, "Enable the debug")
-	configFile := flag.String("c", "/etc/velonetics/configuration.json", "Path to the configuration filename")
+	configFile := flag.String("c", "/etc/pucora/configuration.json", "Path to the configuration filename")
 	flag.Parse()
 
 	sigs := make(chan os.Signal, 1)
@@ -56,7 +56,7 @@ func main() {
 		serviceConfig.Port = *port
 	}
 
-	logger, _ := logging.NewLogger(*logLevel, os.Stdout, "[VELONETICS]")
+	logger, _ := logging.NewLogger(*logLevel, os.Stdout, "[PUCORA]")
 
 	// Register stats and trace exporters to export the collected data.
 
@@ -69,7 +69,7 @@ func main() {
 		return proxy.NewHTTPProxyWithHTTPExecutor(cfg, opencensus.HTTPRequestExecutorFromConfig(client.NewHTTPClient, cfg), cfg.Decoder)
 	}
 
-	// setup the velonetics router
+	// setup the pucora router
 	routerFactory := veloneticsgin.NewFactory(veloneticsgin.Config{
 		Engine:         gin.Default(),
 		ProxyFactory:   opencensus.ProxyFactory(proxy.NewDefaultFactory(opencensus.BackendFactory(bf), logger)),

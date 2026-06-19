@@ -7,7 +7,7 @@ import (
 
 	"contrib.go.opencensus.io/exporter/stackdriver"
 	"contrib.go.opencensus.io/exporter/stackdriver/monitoredresource"
-	opencensus "github.com/velonetics/velonetics-opencensus/v2"
+	opencensus "github.com/pucora/velonetics-opencensus/v2"
 )
 
 func init() {
@@ -16,7 +16,7 @@ func init() {
 	})
 }
 
-var defaultMetricPrefix = "velonetics"
+var defaultMetricPrefix = "pucora"
 
 func Exporter(_ context.Context, cfg opencensus.Config) (*stackdriver.Exporter, error) {
 	if cfg.Exporters.Stackdriver == nil {

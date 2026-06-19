@@ -3,8 +3,8 @@ package opencensus
 import (
 	"context"
 
-	"github.com/velonetics/lura/v2/config"
-	"github.com/velonetics/lura/v2/proxy"
+	"github.com/pucora/lura/v2/config"
+	"github.com/pucora/lura/v2/proxy"
 	"go.opencensus.io/trace"
 )
 

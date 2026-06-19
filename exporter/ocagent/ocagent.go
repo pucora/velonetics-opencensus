@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"contrib.go.opencensus.io/exporter/ocagent"
-	opencensus "github.com/velonetics/velonetics-opencensus/v2"
+	opencensus "github.com/pucora/velonetics-opencensus/v2"
 
 	// Auto-import to enable grpc compression
 	_ "google.golang.org/grpc/encoding/gzip"
@@ -30,7 +30,7 @@ func Exporter(_ context.Context, cfg opencensus.Config) (*ocagent.Exporter, erro
 	options = append(options, ocagent.WithAddress(cfg.Exporters.Ocagent.Address))
 
 	if cfg.Exporters.Ocagent.ServiceName == "" {
-		cfg.Exporters.Ocagent.ServiceName = "Velonetics-Opencensus"
+		cfg.Exporters.Ocagent.ServiceName = "Pucora-Opencensus"
 	}
 	options = append(options, ocagent.WithServiceName(cfg.Exporters.Ocagent.ServiceName))
 

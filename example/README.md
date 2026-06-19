@@ -28,14 +28,14 @@ Example
 ## Influxd server
 
 	$ docker run -p 8086:8086 \
-	  -e INFLUXDB_DB=velonetics \
+	  -e INFLUXDB_DB=pucora \
 	  -d --name=influx \
 	  influxdb
 
 ## Build and Run
 
 	$ go build
-	$ gcvis ./example -l DEBUG -d -p 8080 -c velonetics.json -name gateway0 -s 9091
+	$ gcvis ./example -l DEBUG -d -p 8080 -c pucora.json -name gateway0 -s 9091
 	$ gcvis ./example -l DEBUG -d -p 8081 -c velonetics_2.json -name gateway1 -s 9092
 	$ gcvis ./example -l DEBUG -d -p 8082 -c velonetics_3.json -name gateway2 -s 9093
 

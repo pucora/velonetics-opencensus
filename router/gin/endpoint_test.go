@@ -12,16 +12,16 @@ import (
 	"testing"
 
 	"github.com/gin-gonic/gin"
-	opencensus "github.com/velonetics/velonetics-opencensus/v2"
-	"github.com/velonetics/lura/v2/config"
-	"github.com/velonetics/lura/v2/proxy"
+	opencensus "github.com/pucora/velonetics-opencensus/v2"
+	"github.com/pucora/lura/v2/config"
+	"github.com/pucora/lura/v2/proxy"
 	"go.opencensus.io/plugin/ochttp"
 	"go.opencensus.io/stats/view"
 )
 
 var (
 	extraConfig = []byte(`{
-		"github_com/velonetics/velonetics-opencensus": {
+		"github_com/pucora/velonetics-opencensus": {
 			"enabled_layers": {
 				"router": true
 			}

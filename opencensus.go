@@ -11,7 +11,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/velonetics/lura/v2/config"
+	"github.com/pucora/lura/v2/config"
 	"go.opencensus.io/plugin/ochttp"
 	"go.opencensus.io/stats/view"
 	"go.opencensus.io/trace"
@@ -236,7 +236,7 @@ type DataDogConfig struct {
 
 const (
 	ContextKey = "opencensus-request-span"
-	Namespace  = "github_com/velonetics/velonetics-opencensus"
+	Namespace  = "github_com/pucora/velonetics-opencensus"
 )
 
 var (

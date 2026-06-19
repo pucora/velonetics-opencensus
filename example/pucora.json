@@ -30,7 +30,7 @@
         }
     ],
     "extra_config": {
-        "github_com/velonetics/velonetics-opencensus": {
+        "github_com/pucora/velonetics-opencensus": {
             "sample_rate": 100,
             "reporting_period": 1,
             "enabled_layers": {
@@ -40,12 +40,12 @@
             "exporters": {
                 "influxdb": {
                     "address": "http://192.168.99.100:8086",
-                    "db": "velonetics",
+                    "db": "pucora",
                     "timeout": "1s"
                 },
                 "zipkin": {
                     "collector_url": "http://192.168.99.100:9411/api/v2/spans",
-                    "service_name": "velonetics"
+                    "service_name": "pucora"
                 },
                 "prometheus": {
                     "port": 9091,
@@ -56,10 +56,10 @@
                 },
                 "jaeger": {
                     "endpoint": "http://192.168.99.100:14268/api/traces",
-                    "service_name":"velonetics"
+                    "service_name":"pucora"
                 },
                 "xray": {
-                  "version": "Velonetics-opencensus",
+                  "version": "Pucora-opencensus",
                   "region": "eu-west-1",
                   "access_key_id": "myaccesskey",
                   "secret_access_key": "mysecretkey"

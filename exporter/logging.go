@@ -3,8 +3,8 @@ package exporter
 import (
 	"context"
 
-	opencensus "github.com/velonetics/velonetics-opencensus/v2"
-	"github.com/velonetics/lura/v2/logging"
+	opencensus "github.com/pucora/velonetics-opencensus/v2"
+	"github.com/pucora/lura/v2/logging"
 	"go.opencensus.io/stats/view"
 	"go.opencensus.io/trace"
 )

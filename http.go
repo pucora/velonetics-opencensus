@@ -4,8 +4,8 @@ import (
 	"context"
 	"net/http"
 
-	"github.com/velonetics/lura/v2/config"
-	transport "github.com/velonetics/lura/v2/transport/http/client"
+	"github.com/pucora/lura/v2/config"
+	transport "github.com/pucora/lura/v2/transport/http/client"
 	"go.opencensus.io/plugin/ochttp"
 	"go.opencensus.io/tag"
 	"go.opencensus.io/trace"
